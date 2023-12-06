@@ -1,4 +1,4 @@
-class Matchers {
+class TestMatchers {
     constructor(actual) {
         this.actual = actual
     }
@@ -28,7 +28,7 @@ class Matchers {
 }
 
 function expect(actual) {
-    return new Matchers(actual)
+    return new TestMatchers(actual)
 }
 
 function describe(suiteName, fn) {
