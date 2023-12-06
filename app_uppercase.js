@@ -27,53 +27,53 @@ class Matchers {
     }
 }
 
-function expect(actual) {
-    return new Matchers(actual)
+function it(testName, fn) {
+    console.log(`Test: ${testName}`)
+    try {
+        fn()
+    } catch (err) {
+        console.log(err)
+        throw new Error("Test run failed")
+    }
 }
 
 function describe(suiteName, fn) {
     try {
-        console.log(`suite: ${suiteName}`)
+        console.log(`Suite: ${suiteName}`)
         fn()
     } catch (err) {
         console.log(err.message)
     }
 }
 
-function it(testName, fn) {
-    console.log(`test: ${testName}`)
-    try {
-        fn()
-    } catch (err) {
-        console.log(err)
-        throw new Error("test run failed")
-    }
+const expect = (actual) => {
+    return new Matchers(actual)
 }
 
-describe("suite will fail", () => {
-    it("should fail, true to be false", () => {
+describe("Test suite", () => {
+    it("Tests boolean values", () => {
         expect(true).toBe(false)
     })
 
-    it("tests numbers, 3 === 3", () => {
+    it("Tests numbers", () => {
         expect(3).toBe(3)
     })
 
-    it("tests truthy value, 'abc' to be truthy", () => {
+    it("Tests truthy value", () => {
         expect("abc").toBeTruthy()
     })
 })
 
-describe("second suite", () => {
-    it("should succeed, true === true", () => {
+describe("Second suite", () => {
+    it("Tests boolean values", () => {
         expect(true).toBe(true)
     })
 
-    it("should succeed, 3 === 3", () => {
+    it("Tests numbers", () => {
         expect(3).toBe(3)
     })
 
-    it("should succeed, 'abc' to be truthy", () => {
+    it("Tests truthy value", () => {
         expect("abc").toBeTruthy()
     })
 })
