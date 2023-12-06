@@ -1,0 +1,24 @@
+{
+    "name": "hope_testing_library",
+    "version": "1.0.0",
+    "description": "Testing library",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon app.js",
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/losslessring/hope_testing_library.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/losslessring/hope_testing_library/issues"
+    },
+    "homepage": "https://github.com/losslessring/hope_testing_library#readme",
+    "dependencies": {
+        "nodemon": "^3.0.2",
+        "ramda": "^0.29.1"
+    }
+}
